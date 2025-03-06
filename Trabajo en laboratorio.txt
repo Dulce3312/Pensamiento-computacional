@@ -1,0 +1,53 @@
+
+text = "python es un lenguaje poderoso"
+text2 = text.split()
+print(text2[0])
+print(text2[4])
+"""
+"""
+repetido = "hola   mundo   en   python"
+repetido2 = " ".join(repetido.split())
+print(repetido2)
+"""
+"""
+correo = "usuario@gmail.com"
+correo2 = correo.split('@')
+print (correo2[1])
+"""
+"""
+documento = "documento.pdf"
+dx = documento.endswith("pdf") or documento.endswith("ej.")
+print(dx)
+"""
+"""
+palabra = "Me gusta python"
+palabra2 = " ".join(palabra.split()[::-1])
+print(palabra2)
+
+
+d1 = input("¿Qué frase o diálogo de película quieres conocer hoy?: ").lower()
+d2 = ("motivación, triste, romántica, clásica, graciosa")
+text = d1.split()
+
+respuestas = {
+    "triste": "Siempre vuelves por mí, ¿verdad, amigo? No importa cuántas horas pasen, siempre estás ahí, esperándome. Eres más leal que cualquier persona que haya conocido. Pero un día… un día no regresaré. Y aún así, sé que seguirás esperando. Porque eso es lo que hacen los amigos de verdad.- Hackiko",
+    "romántica": "Mi mamá siempre decía: ‘La vida es como una caja de chocolates. Nunca sabes lo que te va a tocar’. Yo no sé mucho de casi nada, pero sí sé que el amor es algo hermoso. Y si amas a alguien, debes serle leal. Porque el amor es algo que puede durar toda la vida. Forest Gump",
+    "motivación": "No peleamos solo por nosotros, sino por los que vendrán después. No se trata de la supervivencia de una sola persona, sino de la libertad de todos. Cuando nos levantamos y nos unimos, nos damos cuenta de que la opresión solo existe mientras permitimos que nos controle. Pero hoy, decidimos pelear. No porque queramos violencia, sino porque merecemos algo mejor. Y mientras mi voz pueda ser escuchada, no me quedaré en silencio - Los juegos del hambre",
+    "clásica" : "Francamente, querida, me importa un bledo. He llegado a un punto en que ya no tengo paciencia para la vida, ni para las personas que viven de sueños rotos. Todos esos castillos en el aire, esas esperanzas vacías que se hacen trizas...- Lo que el viento se llevó",
+    "graciosa" : "Regla número 1: Cardio. Si no puedes correr, vas a ser el primero en morir. - Zombieland",
+}
+
+if "triste" in text:
+    respuesta = respuestas["triste"]
+elif "romántica" in text:
+    respuesta = respuestas["romántica"]
+elif "motivación" in text:
+    respuesta = respuestas["motivación"]
+elif "clásica" in text:
+    respuesta = respuestas["clásica"]
+elif "graciosa" in text:
+    respuesta = respuestas["graciosa"]
+else:
+    respuesta = "Lo siento, no encontré una frase para esa categoría."
+
+print(respuesta)
