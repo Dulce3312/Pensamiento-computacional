@@ -1,0 +1,41 @@
+#quitar las comillas
+
+'''
+metro=int(input("ingrese los metros cubicos: "))
+people=int(input("ingrese los habitantes:" ))
+tarifa=metro
+ 
+if metro<15:
+    print(f"la tarifa a pagar es de Q{tarifa*5}")
+elif metro>15 and metro<30 and people>3:
+    print(f"la tarifa a pagar es de Q{tarifa*4}")
+elif metro>15 and metro<30 and people==3:
+    print(f"la tarifa a pagar es de Q{tarifa*4.5}")
+elif metro>15 and metro<30 and people<3:
+    print(f"la tarifa a pagar es de Q{tarifa*5}")
+elif metro>30 and people>5:
+    print(f"la tarifa a pagar es de Q{tarifa*3.5}")
+elif metro>30 and people%2==0:
+    print(f"la tarifa a pagar es de Q{tarifa*4}")
+else:
+    print(f"la tarifa a pagar es de Q{tarifa*4.2}")
+'''
+
+placa=input("ingrese el número de placa (ejemplo: GZC641): ")
+car=int(input("Escriba el año del vehículo: "))
+ultimo_digito = int(placa[-1])
+
+if len(placa)!=6 :
+    print("Placa inválida. Asegúrese de ingresar correctamente")
+elif 2025 - car >= 25:
+    print("MANTENIMIENTO OBLIGATORIO")
+else:
+    if car>2021:
+        lunes={0,2,4,6,8}
+        viernes={1,3,5,7,9}
+
+    if ultimo_digito in lunes:
+        print("NO CIRCULA LOS LUNES y NO CIRCULA SÁBADOS HASTA EL MEDIO DÍA")
+    else:
+        ultimo_digito in viernes 
+        print("NO CIRCULA LOS VIERNES")
