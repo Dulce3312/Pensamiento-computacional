@@ -1,0 +1,30 @@
+saldo = int(input(f"\nSaldo actual: Q{saldo}"))
+intentos = 3
+
+while True:
+    print(f"\nSaldo actual: Q{saldo}")
+    retiro = input("Ingrese monto a retirar (o '0' para salir): ")
+
+    if not retiro.isdigit():
+        print("Entrada inválida. Intente de nuevo.")
+        continue
+
+    retiro = int(retiro)
+
+    if retiro == 0:
+        print("Operación cancelada. Adiós.")
+        break
+
+    if retiro > saldo:
+        intentos -= 1
+        if intentos == 0:
+            print("Ha superado el número de intentos permitidos. Operación cancelada.")
+            break
+        print(f"Saldo insuficiente. Intentos restantes: {intentos}")
+    else:
+        saldo -= retiro
+        print(f"Retiro exitoso. Nuevo saldo: Q{saldo}")
+
+        if saldo == 0:
+            print("Retiro exitoso. Saldo agotado. Adiós.")
+            break
