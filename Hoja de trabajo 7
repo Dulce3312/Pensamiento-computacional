@@ -19,6 +19,13 @@ while PalabraSecreta:
         print("¡Has dejado el bucle con éxito!")
         break
         '''
+'''
+user_word = input("Escriba una palabra: ")
+separate = user_word.upper()
+vocals = ['A','E','I','O','U']
 
-user_word = input("Ingrese una palabra: ")
-print(user_word.upper())
+for n in separate: 
+    if n in vocals:
+        continue
+    print (n)
+'''
