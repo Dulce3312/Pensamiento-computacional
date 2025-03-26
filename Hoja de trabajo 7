@@ -1,0 +1,24 @@
+'''
+for i in range (1,11):
+    if i % 2 != 0:
+        print(i)
+'''
+'''
+x = 1
+while x < 11:
+    if x % 2 != 0: 
+        print(x)
+    x += 1
+'''
+'''
+PalabraSecreta = input("Ingrese una palabra: ")
+
+while PalabraSecreta: 
+    PalabraSecreta=input("Ingrese una palabra: ")
+    if (PalabraSecreta == "chupacabra"):
+        print("¡Has dejado el bucle con éxito!")
+        break
+        '''
+
+user_word = input("Ingrese una palabra: ")
+print(user_word.upper())
