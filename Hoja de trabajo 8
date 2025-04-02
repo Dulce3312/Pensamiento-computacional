@@ -1,0 +1,30 @@
+'''
+n= int(input('Tamaño array: '))
+m = int(input('Ingrese número para multiplos: '))
+
+salida = []
+for i in range(0,n):
+    salida.append(m * ( i+1))
+print(salida)
+'''
+'''
+tamaño = int(input('Ingrese el tamaño: '))
+nombre = input('Ingrese el nombre: ')
+
+tamaños = []
+nombres = []
+
+for i in range(tamaño):
+    nombres.append(nombre)
+    tamaños.append(len(nombre))
+    
+for i in range (tamaño):
+    print(f'Nombres:{nombres[i]} Tamaño:{tamaños[i]}')
+    '''
+custom = int(input("Ingrese número de clientes: "))
+
+for i in range(costum):
+    attention = int(input("Ingrese la calificación para cliente: "))
+    counter[attention]
+
+calificacion=['5. Excelente''4. Muy Buena''3. Buena'' 2. Regular'' 1. Malo']
