@@ -1,3 +1,4 @@
+#ejercicio1
 '''
 n= int(input('Tamaño array: '))
 m = int(input('Ingrese número para multiplos: '))
@@ -7,24 +8,53 @@ for i in range(0,n):
     salida.append(m * ( i+1))
 print(salida)
 '''
+#ejercicio2
 '''
-tamaño = int(input('Ingrese el tamaño: '))
-nombre = input('Ingrese el nombre: ')
+tamaño = int(input('Ingrese la cantidad de nombres: '))
 
-tamaños = []
 nombres = []
+tamaños = []
 
 for i in range(tamaño):
+    nombre = input(f'Ingrese el nombre {i + 1}: ')
     nombres.append(nombre)
     tamaños.append(len(nombre))
     
-for i in range (tamaño):
-    print(f'Nombres:{nombres[i]} Tamaño:{tamaños[i]}')
-    '''
+for i in range(tamaño):
+    print(f'Nombre: {nombres[i]} - Tamaño: {tamaños[i]}')
+'''
+#Escenario
+'''
 custom = int(input("Ingrese número de clientes: "))
+attention = [int(input(f"Cliente {i+1}: ")) for i in range(custom)]
 
-for i in range(costum):
-    attention = int(input("Ingrese la calificación para cliente: "))
-    counter[attention]
+calificacion = {5: "Excelente", 4: "Muy Buena", 3: "Buena", 2: "Regular", 1: "Malo"}
 
-calificacion=['5. Excelente''4. Muy Buena''3. Buena'' 2. Regular'' 1. Malo']
+conteo = {}
+for i in attention:
+    if i in conteo: 
+        conteo[i] += 1
+    else: 
+        conteo[i] = 1
+
+frecuente = None
+frecuente2 = 0 
+for clave in conteo: 
+    if conteo[clave] > frecuente2:
+        frecuente2 = conteo[clave]
+        frecuente = clave
+
+suma = sum(attention)
+promedio = suma / custom
+
+contador_new = 0
+for i in attention: 
+    if i < promedio: 
+        contador_new += 1
+
+porcentaje_menor = (contador_new / custom) * 100
+
+print(f"\nMás frecuente: {frecuente}")
+print(f"\nPromedio: {promedio:.2f}")
+print(f"Porcentaje menor al promedio: {porcentaje_menor:.2f}%")
+'''
