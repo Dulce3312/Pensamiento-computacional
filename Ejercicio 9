@@ -1,0 +1,59 @@
+'''
+#Ejercicio 1
+def par_impar(n): 
+    if (n % 2 == 0):
+        print("es par")
+    else: 
+        print("es impar")
+par_impar(5)
+'''
+'''
+#Ejercicio 2
+def suma_lista(lista):
+    suma = 0
+    for numero in lista:
+        suma += numero
+    return suma 
+resultado = suma_lista([1,2,3])
+print(resultado)
+'''
+'''
+#Ejercicio 3
+def cuenta_regresiva(n):
+    if n<0: 
+        print('¡Despegue!')
+    else: 
+        print(n)
+        cuenta_regresiva(n-1) #recursividad
+cuenta_regresiva(5)
+'''
+'''
+#Ejercicio 4
+def cuenta_ascendente(n):
+    if n>0: 
+        cuenta_ascendente(n-1)
+        print(n)
+cuenta_ascendente(5)
+'''
+'''
+#Ejercicio 5
+def suma_hasta(n):
+    if n == 1:
+        return 1 
+    else: 
+        return n + suma_hasta(n-1)
+resultado = suma_hasta(4)
+print(resultado)
+'''
+'''
+#Ejercicio 6 
+def suma_hasta(n):
+    if n == 1 or n == 0:
+        return 1 
+    else: 
+        return n * suma_hasta(n-1)
+resultado = suma_hasta(5)
+print(resultado)
+'''
+#Ejercicio 7 
+def minimo(lista): 
