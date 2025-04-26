@@ -56,4 +56,43 @@ resultado = suma_hasta(5)
 print(resultado)
 '''
 #Ejercicio 7 
-def minimo(lista): 
+def minimo(lista):
+    if len(lista)==1:
+        return lista[0]
+    else: 
+        minimosub = minimo(lista[1:])
+        if lista[0] < minimosub:
+            return lista[0]
+        else: 
+            return minimosub
+lista = ([5, 3, 8, 1, 2])
+minimo = minimo(lista)
+print(f"El número menor es: {minimo}")
+'''
+'''
+#juego
+import random
+import time
+def adivina_el_numero(): 
+    numero_secreto = random.randint(1,100)
+    intentos = 0
+    max_intentos = 5
+
+    print("Bienvenido al juego de Adivina el Número.") 
+    print("Elige un número entre 1 y 100.") 
+    print("¡Buena suerte!")
+    tiempo_inicio = time.time() 
+
+    while intentos < max_intentos: 
+        intentos += 1
+        adivinar = int(input(f"Adivine el número {intentos}: "))
+        if adivinar < numero_secreto: 
+            print("El número es mayor")
+        elif adivinar > numero_secreto:
+            print("El número es menor")
+        else: 
+            print(f"¡Felicidades! el número es correcto lo adivinaste en {tiempo_inicio}")
+    print(f"El número era: {numero_secreto}")
+
+adivina_el_numero()
+'''
