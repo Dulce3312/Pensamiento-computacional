@@ -1,0 +1,114 @@
+#ejercicio1 Clínica Veterinaria
+'''
+class Animal: 
+    def _init_(self, nombre, edad, peso):
+        self.nombre = nombre 
+        self.edad = edad
+        self.peso = peso 
+    
+    def datos_medicos(self): 
+        print(f"nombre: {self.nombre}")
+        print(f"edad: {self.edad}")
+        print(f"peso: {self.peso}")
+    
+    def calcular_dosis (self):
+        return 0
+    
+    def ficha_medica(self):
+        self.ficha_medica()
+        print(f"Dosis recomendada: {self.calcular_dosis}")
+    
+class perro(Animal):
+    def _init_(self, nombre, edad, peso, raza):
+        super()._init_(nombre, edad, peso, raza)
+        self.raza = raza
+        
+    def calcular_dosis(self):
+        return self.peso * 0.5
+    
+    def ficha_medica(self):
+        super().ficha_medica()
+        print(f"Raza: {self.raza}")
+    
+class gato(Animal):
+    def _init_(self, nombre, edad, peso, raza):
+        super()._init_(nombre, edad, peso, raza)
+        self.color = color
+        
+    def calcular_dosis(self):
+        return self.peso * 0.4
+    
+    def ficha_medica(self):
+        super().ficha_medica()
+        print(f"color: {self.color}")
+    
+class ave(Animal):
+    def _init_(self, nombre, edad, peso, tipo_ave):
+        super()._init_(nombre, edad, peso, tipo_ave)
+        self.tipo_ave = tipo_ave
+        
+    def calcular_dosis(self):
+        return self.peso * 0.2
+        
+    def ficha_medica(self):
+        super().ficha_medica()
+        print(f"Tipo de ave: {self.tipo_ave}")
+        
+class reptil(Animal):
+    def _init_(self, nombre, edad, peso, habitat):
+        super()._init_(nombre, edad, peso, habitat)
+        self.habitat = habitat
+        
+    def calcular_dosis(self):
+        return self.peso * 0.3
+        
+    def ficha_medica(self):
+        super().ficha_medica()
+        print(f"Habitat: {self.habitat}")
+'''
+#Ejercicio2 Sistema de personas en una institución
+'''
+class persona: 
+    def _init_(self, nombre, edad, DPI):
+        self.nombre = nombre 
+        self.edad = edad
+        self.DPI = DPI
+    
+    def informacion(self): 
+        print(f"nombre: {self.nombre}")
+        print(f"edad: {self.edad}")
+        print(f"DPI: {self.DPI}")
+        
+class estudiante(persona):
+    def _init_(self, nombre, edad, DPI, carrera, semestre):
+        super()._init_(nombre, edad, DPI)
+        self.carrera = carrera
+        self.semestre = semestre
+        
+    def informacion(self):
+        super().informacion()
+        print(f"Carrera: {self.carrera}")
+        print(f"semestre: {self.semestre}")
+        
+class profesor(persona):
+    def _init_(self, nombre, edad, DPI, materia, titulo):
+        super()._init_(nombre, edad, DPI)
+        self.materia = materia
+        self.titulo = titulo
+        
+    def informacion(self):
+        super().informacion()
+        print(f"Materia: {self.materia}")
+        print(f"Título: {self.titulo}")
+
+class administrativo(persona):
+    def _init_(self, nombre, edad, DPI, puesto, horario):
+        super()._init_(nombre, edad, DPI)
+        self.horario = horario
+        self.puesto = puesto
+        
+    def informacion(self):
+        super().informacion()
+        print(f"Puesto: {self.puesto}")
+        print(f"Horario: {self.horario}")
+'''
