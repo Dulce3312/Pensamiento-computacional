@@ -1,28 +1,134 @@
-from ABC import ABC, abstractmethod
+'''
+#ejercicio 1
+from abc import ABC, abstractmethod
 import math
 
-class experimento(ABC):
+class Experimento(ABC):
     @abstractmethod
     def realizar_experimento(self):
         pass
-      
-class caida_libre(experimento):
+
+class CaidaLibre(Experimento):
     def __init__(self, altura, gravedad):
         self.altura = altura 
         self.gravedad = gravedad 
         
     def realizar_experimento(self):
-        if self.altura == 0:
-            raise ValueError("La altura no puede ser negativa")
+        if self.altura < 0:
+            raise ValueError("La altura no puede ser negativa.")
         elif self.gravedad == 0: 
-            raise ValueError("La gravedad no puede ser negativa")
+            raise ValueError("La gravedad no puede ser cero.")
             
-        tiempo = math.sqrt((2 * self.altura)/self.gravedad)
+        tiempo = math.sqrt((2 * self.altura) / self.gravedad)
         return tiempo
-        
-    def main():
-        altura = float(input("Ingrese la altura: "))
-        gravedad = float(input("Ingrese la gravedad: "))
+
+    @staticmethod
+    def datos():
+        try: 
+            altura = float(input("Ingrese la altura (m): "))
+            gravedad = float(input("Ingrese la gravedad (m/s²): "))
+            return CaidaLibre(altura, gravedad)
+        except ValueError: 
+            print("Entrada inválida. Ingrese valores numéricos.")
+            return None
+
+def main(): 
+    print("Simulación de Caída Libre")
+
+    experimento = CaidaLibre.datos()
+
+    if experimento: 
+        try: 
+            tiempo = experimento.realizar_experimento()
+            print(f"Resultado: el objeto tarda {tiempo:.2f} segundos en caer.")
+        except ValueError as error: 
+            print(f"{error}")
+
+if __name__ == "__main__":
+    main()
+'''
+#ejercicio 2
+import math
+
+class OperacionCientifica():
+    def calcular(self):
+        pass
+
+class RaizCuadrada(OperacionCientifica):
+    def __init__(self, numero):
+        self.numero = numero 
+
+    def calcular (self):
+        if self.numero < 0: 
+            raise ("No se puede calcular número negativo ")
+        return math.sqrt(self.numero)
     
-        experimento = caide_libre (altura,gravedad)
-        tiempo_caida = experimento.realizar_experimento()
+class potencia(OperacionCientifica):
+    def __init__(self, base, exponente):
+        self.base = base 
+        self.exponente = exponente
+
+    def calcular(self):
+        return math.pow(self.base,self.exponente)
+
+class logaritmo(OperacionCientifica):
+    def __init__(self, numero, base = math.e):
+        self.numero = numero 
+        self.base = base 
+
+    def calcular(self):
+        if self.numero <=0 or self.base <= 0:
+            raise ValueError("no se puede calcular el logaritmo de un numero negativo")
+        if self.base == 1: 
+            raise ValueError("La base debe ser positiva o distinta de 1")
+        return math.log(self.numero, self.base)
+class Factorial(OperacionCientifica):
+    def __init__(self, numero):
+        self.numero = numero
+
+    def calcular(self):
+        if self.numero < 0 or not self.numero.is_integer():
+            raise ValueError("El factorial solo está definido para enteros no negativos.")
+        return math.factorial(int(self.numero))
+
+def main():
+    print("Calculadora Científica")
+    print("1. Raíz cuadrada")
+    print("2. Potencia")
+    print("3. Logaritmo")
+    print("4. Factorial")
+
+    opcion = input("\nSeleccione una operación (1-4): ")
+
+    try:
+        if opcion == "1":
+            num = float(input("Ingrese un número: "))
+            operacion = RaizCuadrada(num)
+
+        elif opcion == "2":
+            base = float(input("Ingrese la base: "))
+            exp = float(input("Ingrese el exponente: "))
+            operacion = Potencia(base, exp)
+
+        elif opcion == "3":
+            num = float(input("Ingrese el número: "))
+            base = input("Ingrese la base (Enter para base e): ")
+            base = float(base) if base else math.e
+            operacion = Logaritmo(num, base)
+
+        elif opcion == "4":
+            num = float(input("Ingrese un número entero no negativo: "))
+            operacion = Factorial(num)
+
+        else:
+            print("Opción no válida.")
+            return
+
+        resultado = operacion.calcular()
+        print(f"Resultado: {resultado}")
+
+    except ValueError as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    main()
