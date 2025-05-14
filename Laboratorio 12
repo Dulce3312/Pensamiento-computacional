@@ -1,0 +1,27 @@
+# Datos
+dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+azucar = [130, 160, 95, 175, 160]
+sal = [2000, 2400, 1800, 2400, 2700]
+presion1 = [115, 130, 110, 125, 175]
+presion2 = [75, 85, 70, 78, 95]
+
+def clasificar_presion(a, b):
+    if a < 120 and b < 80:
+        return "Normal"
+    elif 120 <= a <= 129 and b < 80:
+        return "Elevada"
+    elif 130 <= a <= 139 or 80 <= b <= 89:
+        return "Hipertensión 1"
+    elif a >= 140 or b >= 90:
+        return "Hipertensión 2"
+    return "Desconocida"
+
+print("Resultados diarios: ")
+
+for i in range(len(dias)):
+    estado_azucar = "Normal" if 70 <= azucar[i] <= 140 else "peligro"
+    estado_sal = "Adecuado" if sal[i] <= 2300 else "peligro"
+    estado_presion = clasificar_presion(presion1[i], presion2[i])
+
+    print(f"{dias[i]} → Azúcar: {azucar[i]} mg/dL [{estado_azucar}] | "
+
