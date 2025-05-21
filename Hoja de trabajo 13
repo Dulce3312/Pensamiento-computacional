@@ -1,0 +1,50 @@
+#El juego de la vida
+matriz= [
+ [0,0,0,0,0,0,0,1,1,0],
+ [0,1,1,0,0,0,0,0,0,0],
+ [0,1,0,0,0,0,0,0,0,0],
+ [0,0,0,0,0,0,0,0,0,0],
+ [0,0,0,0,0,0,0,0,0,0],
+ [0,0,0,0,0,1,1,0,0,0],
+ [0,0,0,0,0,1,1,0,0,0],
+ [0,0,1,1,0,0,0,0,0,0],
+ [0,0,1,1,0,0,0,0,0,0],
+ [0,0,0,0,0,0,0,0,1,0],
+]
+
+def imprimir_tablero(tablero): #se define el tablero
+    for fila in tablero: 
+        for celda in fila: 
+            print(celda, end=" ")
+        print()
+    print()
+    
+def siguiente_generacion(tablero): #se define la generación
+    nuevo = []
+    for fila in tablero:
+        nueva_fila = []
+        for i in range(len(fila)):
+            vecinos = 0
+            
+            if i > 0 and fila[i - 1] == 1:
+                vecinos += 1
+            if i < len(fila) - 1 and fila [i +1] == 1:
+                vecinos += 1
+            
+            if fila [i] == 1:
+                nueva_fila.append(1 if 1 <= vecinos <= 2 else 0)
+            else: 
+                nueva_fila.append(1 if vecinos == 1 else 0)
+        nuevo.append(nueva_fila)
+    return nuevo
+#imprimir las generaciones
+print("Generación 0:") 
+imprimir_tablero(matriz)
+gen1 = siguiente_generacion(matriz)
+
+print("Generación 1:")
+imprimir_tablero(gen1)
+gen2 = siguiente_generacion(gen1)
+
+print("Generación 2:")
+imprimir_tablero(gen2)
